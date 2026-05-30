@@ -46,13 +46,31 @@ fi
 if [ -d "$SCRIPT_DIR/references" ]; then
     print_success "references directory exists"
     
-    # Count book files
-    BOOK_COUNT=$(ls -1 "$SCRIPT_DIR/references/"*.md 2>/dev/null | grep -c "[0-9]")
+    # Count English book files
+    EN_BOOK_COUNT=$(ls -1 "$SCRIPT_DIR/references/"*.md 2>/dev/null | grep -c "[0-9]" || echo "0")
     
-    if [ "$BOOK_COUNT" -eq 20 ]; then
-        print_success "All 20 book reference files present"
+    if [ "$EN_BOOK_COUNT" -eq 20 ]; then
+        print_success "All 20 English book reference files present"
     else
-        print_error "Expected 20 book reference files, found $BOOK_COUNT"
+        print_error "Expected 20 English book reference files, found $EN_BOOK_COUNT"
+        exit 1
+    fi
+    
+    # Check Chinese directory
+    if [ -d "$SCRIPT_DIR/references/chinese" ]; then
+        print_success "Chinese references directory exists"
+        
+        # Count Chinese book files
+        CN_BOOK_COUNT=$(ls -1 "$SCRIPT_DIR/references/chinese/"*.md 2>/dev/null | grep -c "[0-9]" || echo "0")
+        
+        if [ "$CN_BOOK_COUNT" -eq 20 ]; then
+            print_success "All 20 Chinese book reference files present"
+        else
+            print_error "Expected 20 Chinese book reference files, found $CN_BOOK_COUNT"
+            exit 1
+        fi
+    else
+        print_error "Chinese references directory missing"
         exit 1
     fi
 else
@@ -90,6 +108,9 @@ echo "  All tests passed!"
 echo "=========================================="
 echo ""
 echo "The build-your-confidence skill is ready to use."
+echo ""
+echo "English books: 20 files in references/"
+echo "Chinese books: 20 files in references/chinese/"
 echo ""
 echo "To install, run:"
 echo "  ./install.sh"
