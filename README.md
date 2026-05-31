@@ -95,7 +95,15 @@ Use this skill when the user:
 
 ### Installation
 
-To install this skill, copy the files to your skills directory:
+#### Method 1: Install via Skills CLI (Recommended)
+
+```bash
+npx skills add itech001/build-your-confidence
+```
+
+#### Method 2: Manual Installation
+
+Copy the files to your skills directory:
 
 ```bash
 # For OpenCode
@@ -104,6 +112,15 @@ cp -r . ~/.opencode/skills/build-your-confidence
 # For other agents
 cp -r . ~/.agents/skills/build-your-confidence
 ```
+
+#### Method 3: Clone from GitHub
+
+```bash
+git clone https://github.com/itech001/build-your-confidence.git
+cp -r build-your-confidence ~/.opencode/skills/
+```
+
+**Online:** [skillhub.cloud.tencent.com/skills/build-your-confidence](https://skillhub.cloud.tencent.com/skills/build-your-confidence)
 
 ---
 
@@ -198,7 +215,15 @@ cp -r . ~/.agents/skills/build-your-confidence
 
 ### 安装
 
-要安装此技能，请将文件复制到您的技能目录：
+#### 方法 1：通过 Skills CLI 安装（推荐）
+
+```bash
+npx skills add itech001/build-your-confidence
+```
+
+#### 方法 2：手动安装
+
+将文件复制到您的技能目录：
 
 ```bash
 # 对于 OpenCode
@@ -208,8 +233,13 @@ cp -r . ~/.opencode/skills/build-your-confidence
 cp -r . ~/.agents/skills/build-your-confidence
 ```
 
+#### 方法 3：从 GitHub 克隆
+
+```bash
+git clone https://github.com/itech001/build-your-confidence.git
+cp -r build-your-confidence ~/.opencode/skills/
+```
+
+**在线：** [skillhub.cloud.tencent.com/skills/build-your-confidence](https://skillhub.cloud.tencent.com/skills/build-your-confidence)
+
 ---
-
-## License / 许可证
-
-MIT License - See [LICENSE](LICENSE) for details.
